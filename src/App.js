@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState}from 'react';
+import Parent from './Parent';
 function App() {
+
+  let [number, setNumber]=useState(7);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>App component.............</h1>
+      <Parent num={number}/>
+      <button onClick={()=>(setNumber(++number))}>Clickme</button>
     </div>
   );
 }
