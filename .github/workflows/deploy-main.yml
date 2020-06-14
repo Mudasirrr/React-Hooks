@@ -1,5 +1,6 @@
 name: Deploy Website
-env: ""
+env:
+  CI: false
 on:
   push:
     branches: [ master ]
