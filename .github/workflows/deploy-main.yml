@@ -19,13 +19,6 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-      - name: test
-        image: node
-        commands:
-         - unset CI
-         - npm install
-         - npm run tests
-
         
       - uses: borales/actions-yarn@v2.0.0
         with:
