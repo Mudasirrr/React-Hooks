@@ -16,6 +16,10 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
+      - name: npm test:ci
+        run: npm run test:ci
+        env:
+         CI: false
         
       - uses: borales/actions-yarn@v2.0.0
         with:
@@ -26,10 +30,7 @@ jobs:
         
       - name: Install Surge
         run: npm install --global surge
-      - name: npm test:ci
-        run: npm run test:ci
-        env:
-         CI: false
+
         
       - name: Run surge
         run: surge ./build react_hooks_by_mudasir.surge.sh --token ${{ secrets.SURGE_TOKEN }}
